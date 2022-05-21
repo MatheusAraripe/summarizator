@@ -1,0 +1,67 @@
+#+title: Projeto Final
+
+The climax of this course is its final project. The final project is
+your opportunity to take your newfound savvy with programming out for
+a spin and develop your very own piece of software. So long as your
+project draws upon this course’s lessons, the nature of your project
+is entirely up to you. You may implement your project in any
+language(s). All that we ask is that you build something of interest
+to you, that you solve an actual problem, that you impact your
+community, or that you change the world. Strive to create something
+that outlives this course.
+
+Inasmuch as software development is rarely a one-person effort, you
+are allowed an opportunity to collaborate with one or two classmates
+for this final project. Needless to say, it is expected that every
+student in any such group contribute equally to the design and
+implementation of that group’s project. Moreover, it is expected that
+the scope of a two- or three-person group’s project be, respectively,
+twice or thrice that of a typical one-person project. A one-person
+project, mind you, should entail more time and effort than is required
+by each of the course’s problem sets.
+
+1. a web-based application using JavaScript, Python, and SQL
+2. an iOS app using Swift
+3. a game using Lua with LÖVE
+4. an Android app using Java
+5. a Chrome extension using JavaScript
+6. a command-line program using C
+7. a hardware-based application for which you program some device
+
+
+* How to submit
+
+  Create a short video (that’s no more than 3 minutes in length) in
+  which you present your project to the world, as with slides,
+  screenshots, voiceover, and/or live action. Your video should
+  somehow include your project’s title, your name, your city and
+  country, and any other details that you’d like to convey to
+  viewers. See [[howtogeek.com/205742/how-to-record-your-windows-mac-linux-android-or-ios-screen][here]] for tips on how to make a “screencast,” though
+  you’re welcome to use an actual camera. Upload your video to YouTube
+  (or, if blocked in your country, a similar site) and take note of
+  its URL; it’s fine to flag it as “unlisted,” but don’t flag it as
+  “private.”
+
+  Create a README.md text file (named exactly that!) in your
+  repository that explains your project. This file should include your
+  Project Title, the URL of your video (created in step 1 above) and a
+  description of your project. You may use the below as a template.
+
+  If unfamiliar with Markdown syntax, you might find [[https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/basic-writing-and-formatting-syntax][GitHub’s Basic
+  Writing and Formatting Syntax]] helpful. If you are using the VS Code,
+  you can also preview your .md file by clicking the ‘preview’ icon as
+  explained here: Markdown Preview in vscode. Standard software
+  project READMEs can often run into the thousands or tens of
+  thousands of words in length; yours need not be that long, but
+  should at least be several hundred words that describe things in
+  detail!
+
+  Your README.md file should be minimally multiple paragraphs in
+  length, and should explain what your project is, what each of the
+  files you wrote for the project contains and does, and if you
+  debated certain design choices, explaining why you made them. Ensure
+  you allocate sufficient time and energy to writing a README.md that
+  documents your project thoroughly. Be proud of it! If it is too
+  short, the system will reject it.
+
+  
