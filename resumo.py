@@ -1,8 +1,8 @@
 import openai
 
-from API_SECRET import API_KEY
+from API_SECRETS import API_KEY_OPENAI
 
-openai.api_key = API_KEY
+openai.api_key = API_KEY_OPENAI
 
 #Usa a api do open AI para gerar um resumo do texto em ingles
 def explicacao(texto):

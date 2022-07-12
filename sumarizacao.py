@@ -33,6 +33,13 @@ def format_lemma(txt):
 
 
 
+#Funcao que retorna a porcentagem de sentencas que o usuario escolheu
+def quantidade_de_sent(text, num):
+  return round(num*(1/10)*text.count("."))
+
+
+
+
 #Funcao que retorna uma lista das sentencas mais importantes baseada na frequencia de palavras, e uma lista de todas as sentencas 
 def sumarizar_lemma(txt, quant_sentencas):
   txt = txt.replace("\\n\\n", " ")
@@ -57,4 +64,11 @@ def sumarizar_lemma(txt, quant_sentencas):
 
 
   melhores_sentencas = heapq.nlargest(quant_sentencas, nota_sentenca, key = nota_sentenca.get)
-  return sentencas_txt, melhores_sentencas
+  resumo = ""
+  for sentenca in sentencas_txt:
+    if sentenca in melhores_sentencas:
+      resumo += sentenca
+  return resumo, sentencas_txt, melhores_sentencas
+
+
+

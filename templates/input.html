@@ -3,63 +3,216 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Entrada do usuario</title>
+        <title>Analise de textos</title>
         <meta charset="utf-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link rel="stylesheet" href="./static/style.css">
+
+         <style>
+
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            
+            
+            body {
+                display: grid;
+                align-items: center;
+                justify-items: center;
+                height: 100vh;
+                background-attachment: fixed;
+                background-size: cover;
+                min-height: 60rem;
+
+            }
+              
+            
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+              }
+            
+              @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                  font-size: 3.5rem;
+                }
+              }
+            
+              .b-example-divider {
+                height: 3rem;
+                background-color: rgba(0, 0, 0, .1);
+                border: solid rgba(0, 0, 0, .15);
+                border-width: 1px 0;
+                box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+              }
+            
+              .b-example-vr {
+                flex-shrink: 0;
+                width: 1.5rem;
+                height: 100vh;
+              }
+            
+              .bi {
+                vertical-align: -.125em;
+                fill: currentColor;
+              }
+            
+              .nav-scroller {
+                position: relative;
+                z-index: 2;
+                height: 2.75rem;
+                overflow-y: hidden;
+              }
+            
+              .nav-scroller .nav {
+                display: flex;
+                flex-wrap: nowrap;
+                padding-bottom: 1rem;
+                margin-top: -1px;
+                overflow-x: auto;
+                text-align: center;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+              }
+            
+            
+            
+            li{
+                list-style: none;
+            }
+            .opcoes{
+                display: flex;
+                justify-content: center;
+                align-items:center;
+                width: 150px;
+                height: 150px;
+                margin-top: 1rem;
+                margin-bottom: 6rem;
+            }
+            
+            
+            p {
+                letter-spacing: 1px;
+                font-size:16px;
+            }
+              
+            .header {
+                position:relative;
+                text-align:center;
+                background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+                color:white;
+            }
+            .submitarea{
+                background-attachment:fixed;
+                background-size: cover;
+                display: grid;
+                align-items: center;
+                justify-items: center;
+                margin: 1rem;
+                text-align: center;
+            }
+            
+            .btn{
+                border-radius: 10px;
+                margin: 1rem;
+                background-color: DodgerBlue;
+                color: whitesmoke;
+                margin: 1rem;
+                
+            }
+            
+            .submit{
+                align-items: center;
+                align-content: center;
+            }
+            
+            .numeros{
+                width:80px
+            }
+            
+
+            #text{
+                border-radius: 50px;
+                color: white;
+                background-color:rgb(199, 210, 220);
+                padding: 1rem;
+                outline: none;
+                border: 2px transparent;
+                box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.50);
+                resize: none;
+            }
+            
+            .destaque{
+                color: black;
+                background-color: #ffff00;
+            }
+            
+            .box{
+                background: rgb(199, 210, 220);
+                padding: 1rem;
+                box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.50);
+                border-radius: 50px;
+                justify-content: center;
+                margin: 2rem;
+                color: white
+            }
+            
+            .textos{
+                width: 500px;
+                height: 600px;
+                text-align: center;
+            } 
+
+         </style>   
+    
     </head>
-    <body>
+    <body class="bg-dark">
+   
+        <main>
 
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="/">Analise Inteligente</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/input">Analise seus textos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/cpdoc">Acervo do CPDOC</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                <symbol id="enviar" viewBox="0 0 16 16">
+                    <path d="M8.5 11.5a.5.5 0 0 1-1 0V7.707L6.354 8.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 7.707V11.5z"/>
+                    <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                </symbol>
+            <svg>
 
         <ul class = "opcoes">
             <li>
                 <div class="submitarea">
                     <form action="/file" id = "fileForm" method = "post">
-                        <input type="file" id = "inputFile" accept = ".txt" onchange="loadFile(this.files[0])">
+                        <label><svg stroke="#d8ae2d" class="bi d-block mx-auto mb-1" width="35" height="35"><use xlink:href="#enviar"/></svg>
+                        <input style='display:none' type="file" id = "inputFile" accept = ".txt" onchange="loadFile(this.files[0])">
+                        </label>
                         <p class = "submit">
-                            <label> Numero de sentencas <input name = "n_sent" id = "quant2"class = "numeros" type="number" min = "0"></label>
-                            <button class = "btn" type="submit">Resumir</button>
+                            <label class="text-white"> Numero de sentencas <input name = "n_sent" id = "quant2"class = "numeros" type="range" min = "1" max="5" value="5"></label>
+                            <button class = "btn-outline-warning bg-dark btn text-warning" type="submit">Resumir</button>
                         </p>
                     </form>
                 </div>
                 <div class="submitarea">
                     <form id = "postForm" action="/analise" method = "post">
-                        <textarea id="text" name = "texto" cols="50" rows="20"></textarea>
+                        <textarea id="text" name = "texto" cols="50" rows="20" class="bg-dark bg-gradient"></textarea>
                         <p class = "submit">
-                            <label> Numero de sentencas para destacar <input name = "n_sent" class = "numeros" id = "quant1"type="number" min = "0"></label>
-                            <button class = "btn" type="submit">Resumir</button>
+                            <label class="text-white"> Numero de sentencas <input name = "n_sent" id = "quant1"class = "numeros" type="range" min = "1" max="5" value="5"></label>
+                            <button class = "btn-outline-warning bg-dark btn text-warning" type="submit">Resumir</button>
                         </p>
                     </form>
                 </div>
             </li>
             <li>
-                <div class="box textos">
-                    <h4>Resumo do texto</h4>
+                <div class="box textos bg-dark bg-gradient">
+                    <h4 class="text-warning">Resumo do texto</h4>
                     <p id = "sumarizado"></p>
-                    <a href="/textos">Veja o texto inteiro</a>
+                    <a class="text-white" href="/textos">Veja o texto inteiro</a>
                 </div>
             </li>
         </ul>
+        </main>
             <script>
                 /*Pegando o texto inserido pelo usuario e enviando para o backend*/
                 document.getElementById('postForm').addEventListener('submit', getData);
