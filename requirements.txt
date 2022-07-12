@@ -33,7 +33,7 @@ pandas==1.4.2
 pandas-stubs==1.2.0.61
 pathy==0.6.1
 preshed==3.0.6
-pt-core-news-sm==3.3.0
+pt-core-news-sm
 pydantic==1.8.2
 pyparsing==3.0.9
 python-dateutil==2.8.2
