@@ -38,12 +38,13 @@ def analise():
     data = request.json['user_input']
     quant = int(request.json['quant'])
 
-    quant = sm.quantidade_de_sent(data,quant)
+    quantidade = sm.quantidade_de_sent(data,quant)
 
 
-    resumo, sentencas, melhores_sentencas = sm.sumarizar_lemma(data, quant)
+    resumo,sentencas,melhores_sentencas = sm.sumarizar(data, quantidade)
 
-    #summ_text_pt = limpatexto(summ_text_pt)
+
+
 
     return resumo
 
@@ -61,14 +62,13 @@ def f():
 
     quant = sm.quantidade_de_sent(data,quant)
 
-    resumo, sentencas, melhores_sentencas = sm.sumarizar_lemma(data, quant)
+    resumo, sentencas, melhores_sentencas = sm.sumarizar(data, quant)
 
     #text_en = pt_to_en(resumo)
 
     #summ_text_en = explicacao(data)
 
     #summ_text_pt = en_to_pt(summ_text_en)
-    #summ_text_pt = limpatexto(summ_text_pt)
     
 
     return resumo

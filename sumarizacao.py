@@ -3,7 +3,8 @@ import re
 import string
 
 import nltk
-import spacy
+
+#import spacy
 
 #!python -m spacy download pt
 
@@ -20,7 +21,7 @@ nltk.download("stopwords")
 #Funcao que formata o texto. Retira stopwords, lematiza e passa tudo para minusculo
 
 def format(txt):
-  txt = re.sub (r'\s', ' ', txt)
+  txt = re.sub(r'\s', ' ', txt)
   txt = txt.replace("\\n\\n", " ")
   txt = txt.lower()
   tokens = []
@@ -38,14 +39,15 @@ def format(txt):
 
 #Funcao que retorna a porcentagem de sentencas que o usuario escolheu
 def quantidade_de_sent(text, num):
-  return round(num*(1/10)*text.count("."))
+  num_sent = len(nltk.sent_tokenize(text))
+  quant = (num_sent*num*10)/100
+  return round(quant)
 
 
 
 
 #Funcao que retorna uma lista das sentencas mais importantes baseada na frequencia de palavras, e uma lista de todas as sentencas 
-def sumarizar_lemma(txt, quant_sentencas):
-  txt = txt.replace("\\n\\n", " ")
+def sumarizar(txt, quant_sentencas):
   texto_format = format(txt)
   freq_palavras = nltk.FreqDist(nltk.word_tokenize(texto_format))
   freq_max  = max(freq_palavras.values())
@@ -71,7 +73,7 @@ def sumarizar_lemma(txt, quant_sentencas):
   for sentenca in sentencas_txt:
     if sentenca in melhores_sentencas:
       resumo += sentenca
-  return resumo, sentencas_txt, melhores_sentencas
+  return resumo,sentencas_txt,melhores_sentencas
 
 
 
